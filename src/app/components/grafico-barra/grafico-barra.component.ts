@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 @Component({
   selector: 'app-grafico-barra',
   templateUrl: './grafico-barra.component.html',
   styleUrls: ['./grafico-barra.component.css']
 })
-export class GraficoBarraComponent {
+export class GraficoBarraComponent implements OnDestroy{
 
   results: any[]=[
     {
@@ -38,7 +38,19 @@ export class GraficoBarraComponent {
 
   colorScheme = 'nightLights';
 
+  intervalo;
+
   constructor() {
+    this.intervalo = setInterval(()=>{
+      const newResults=[...this.results];
+      for (let i in this.results) {
+        newResults[i].value= Math.round(Math.random()*500);
+      }
+      this.results= newResults;
+    },1500);
+  }
+  ngOnDestroy(): void {
+    clearInterval(this.intervalo);
   }
 
   onSelect(event) {
