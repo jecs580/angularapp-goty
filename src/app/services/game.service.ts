@@ -26,4 +26,8 @@ export class GameService {
     }
   }
 
+  VotarJuego(id:string){
+    return this.http.put(`${environment.url}/api/goty/${id}`,{});
+  }
+
 }
