@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "firestore-goty-7d801": {
+      "hosting": {
+        "goty": [
+          "firestore-goty-7d801"
+        ]
+      }
+    }
+  }
+}
