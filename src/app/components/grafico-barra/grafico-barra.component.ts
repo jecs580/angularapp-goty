@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, Input, OnDestroy } from '@angular/core';
 @Component({
   selector: 'app-grafico-barra',
   templateUrl: './grafico-barra.component.html',
@@ -6,25 +6,7 @@ import { Component, OnDestroy } from '@angular/core';
 })
 export class GraficoBarraComponent implements OnDestroy{
 
-  results: any[]=[
-    {
-      "name": "Juego 1",
-      "value": 20
-    },
-    {
-      "name": "Juego 2",
-      "value": 25
-    },
-    {
-      "name": "Juego 3",
-      "value": 15
-    },
-    {
-      "name": "Juego 4",
-      "value": 30
-    }
-  ];
-
+  @Input() results:any[]=[];
 
   // options
   showXAxis = true;

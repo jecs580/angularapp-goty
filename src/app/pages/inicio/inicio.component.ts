@@ -8,7 +8,7 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./inicio.component.css']
 })
 export class InicioComponent implements OnInit {
-
+  juegos:any[]=[];
   constructor(private db: AngularFirestore) { }
 
   ngOnInit(): void {
@@ -22,7 +22,7 @@ export class InicioComponent implements OnInit {
     )
     .subscribe(
       resp=>{
-        console.log(resp);
+        this.juegos = resp;
         
       }
     )
